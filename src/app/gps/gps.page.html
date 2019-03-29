@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>gps</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Cars</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let car of cars">
+      <ion-icon slot="start" color="medium" name="car"></ion-icon>
+      <ion-label>{{car.band}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>parkingAdd</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item-group>
+    <ion-item-divider color="light">รายละเอียดที่จอดรถ</ion-item-divider>
+    <ion-item>
+      <ion-label stacked>สถานที่</ion-label>
+      <ion-input type="text" [(ngModel)]="parking.name" placeholder="ชื่อสถานที่จอดรถ"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>จำนวนที่รองรับ (คัน)</ion-label>
+      <ion-input type="number" [(ngModel)]="parking.available"></ion-input>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light">รูปสถานที่</ion-item-divider>
+    <ion-card>
+      <!-- <ion-item>
+        <ion-avatar item-left>
+          <img src="./assets/img/profile.jpg">
+        </ion-avatar>
+        <h2>Take or Browse Picture</h2>
+        <p>รูปภาพสถานที่จอด</p>
+      </ion-item> -->
+      <img [src]="parking.photo" *ngIf="parking.photo">
+      <img src="../../assets/no-image.png" *ngIf="!parking.photo" padding>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" (click)="takePicture()">
+            <ion-icon name="camera"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="success" (click)="browsePicture()">
+            <ion-icon name="folder-open"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="danger" (click)="removePicture()">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-item-group>
+</ion-content>

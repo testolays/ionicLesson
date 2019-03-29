@@ -1,0 +1,7 @@
+{
+  "name": "newParking",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

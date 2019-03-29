@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>parkingList</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item *ngFor="let p of parkings">
+      <ion-thumbnail slot="start">
+        <ion-img src="http://192.168.1.41/ionic/photos/{{p.photo}}"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{p.name}}</h2>
+        <p>ห่าง {{p.distance}} km</p>
+        <p>ว่าง {{p.available}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="addParking()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>
